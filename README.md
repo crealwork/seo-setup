@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>사이트 URL 하나 주면 AI 에이전트가 SEO 기반 공사를 끝내는 스킬.</b><br>
-  퍼블리시 최적화(favicon·OG·title) → 검색엔진 5종 등록 → GA4/GTM/Clarity 측정 세팅 → 로컬 SEO까지, 체크리스트 게이트로.
+  검색엔진 5종 등록(글로벌+한국) → 사이트맵 제출 → 로컬 SEO까지, 체크리스트 게이트로.
 </p>
 
 ---
@@ -19,15 +19,14 @@
 
 | 게이트 | 내용 |
 |---|---|
-| G0 준비물 | sitemap.xml · robots.txt · title/description/OG 태그 점검 |
-| G1 엔진 등록 | Google(URL 접두어 룰) · Naver · Bing(GSC 임포트) · Daum(PIN→robots.txt) · Pinterest(RSS 자동 핀) |
-| G2 측정 | GA4+GTM+Clarity — 필수 3설정, generate_lead 전환, UTM 규칙, Ads/GSC 연결, 잠재고객, **AI Search 채널**(ChatGPT·Gemini·Claude·Perplexity 유입 분리) |
-| G3 로컬 SEO | Google Business Profile 리뷰 전략 · Naver Place 대표 키워드 조합 · Kakao · Yelp |
-| G4 유료 광고 | 측정 완성 후 별도 [zernio-ads 스킬](https://github.com/crealwork/marketing-kit)로 핸드오프 |
+| G0 준비물 | sitemap.xml · robots.txt 확인 (head 태그는 [publish-checklist 스킬](https://github.com/crealwork/marketing-kit)) |
+| G1 엔진 등록 | Google(URL 접두어 룰) · Naver · Bing(GSC 임포트) · Daum(PIN→robots.txt) · Pinterest(RSS 자동 핀) — 사이트맵 제출까지 |
+| G2 로컬 SEO | Google Business Profile 리뷰 전략 · Naver Place 대표 키워드 조합 · Kakao · Yelp |
 
-전부 실제 UI 경로와 함정("내부 트래픽 필터는 '활성'까지 켜야 적용", "Ads 연결은 소급 불가")이
-박힌 실전 체크리스트입니다. 바이브코딩 사이트라면 GTM/GA4 세팅을 AI에게 통째로 맡기는
-복붙 프롬프트도 들어 있어요 (MEASUREMENT.md §8).
+전부 실제 UI 경로와 함정이 박힌 실전 체크리스트입니다. 측정(GA4/GTM/Clarity),
+퍼블리시 head 최적화, 유료 광고는 [marketing-kit](https://github.com/crealwork/marketing-kit)의
+별도 스킬(analytics-setup · publish-checklist · zernio-ads)로 분리돼 있어요 — 같이 설치하면
+전체 파이프라인이 이어집니다.
 
 ## 설치
 
@@ -48,12 +47,10 @@ G0부터 순서대로, 광고 지출은 내 승인 없이 금지.
 
 ```
 seo-setup/
-├── SKILL.md                  ← 진입점: 게이트 G0–G4 + 하드룰 9개
+├── SKILL.md                  ← 진입점: 게이트 + 하드룰
 └── references/
     ├── ENGINES.md            ← 검색엔진 5종 등록 + 완료 체크
-    ├── MEASUREMENT.md        ← GA4·GTM·Clarity 풀 세팅 + AI 위임 프롬프트
-    ├── LOCAL.md              ← 로컬 SEO (GBP·네이버 플레이스·카카오·Yelp)
-    └── PUBLISH.md            ← 퍼블리시 head 체크리스트 (favicon·OG·title 템플릿)
+    └── LOCAL.md              ← 로컬 SEO (GBP·네이버 플레이스·카카오·Yelp)
 ```
 
 ## 필요한 것
